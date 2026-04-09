@@ -1,0 +1,11 @@
+<div class="section-heading">
+  <h2 class="section-heading__title" [attr.id]="headingId ?? null">
+    @if (hasAccentTitle) {
+      <span class="section-heading__title-base">{{ titleBefore }}</span>
+      <span class="section-heading__title-accent">{{ titleAccent }}</span>
+    } @else {
+      {{ title }}
+    }
+  </h2>
+  <p class="section-heading__subtitle">{{ subtitle }}</p>
+</div>

@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true" class="order-success-content">
+  <div class="order-success-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <main class="order-success-main">
+      <div class="order-success-header">
+        <button type="button" class="order-success-back" aria-label="Retour" (click)="onBackClick()">
+          <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+        </button>
+        <h1>Commande réussi</h1>
+      </div>
+
+      <section class="order-success-message" aria-label="Commande validée">
+        <img
+          class="order-success-icon"
+          [src]="HOME_ASSETS.successFilled"
+          alt="Commande réussie"
+          width="150"
+          height="150"
+          appImgFallback
+        />
+        <h2>Commande réussi!</h2>
+        <p>Merci pour la confiance</p>
+      </section>
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

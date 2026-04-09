@@ -1,0 +1,10 @@
+<button
+  type="button"
+  class="filter-chip"
+  [attr.data-active]="active"
+  [attr.aria-pressed]="active"
+  [attr.aria-label]="ariaLabel || label"
+  (click)="onClick()"
+>
+  {{ label }}
+</button>

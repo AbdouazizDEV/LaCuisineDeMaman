@@ -1,0 +1,79 @@
+.service-card {
+  position: absolute;
+  width: 334px;
+  height: 291px;
+  left: 23px;
+  border: 1px solid rgba(0, 92, 94, 0.25);
+  border-radius: 36px;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.service-card__image {
+  position: absolute;
+  width: 334px;
+  height: 171px;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  border-radius: 36px 36px 0 0;
+}
+
+.service-card__body {
+  position: absolute;
+  width: 334px;
+  height: 130px;
+  left: 0;
+  top: 161px;
+  background: #f1fbfb;
+  backdrop-filter: blur(32px);
+  border-radius: 0 0 36px 36px;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+
+.service-card__body h2 {
+  width: 231px;
+  height: 25px;
+  margin: 0 0 10px;
+  font-family: var(--font-family-display);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.service-card__body p {
+  width: 231px;
+  height: 42px;
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 160%;
+  color: #000000;
+}
+
+.service-card__arrow {
+  position: absolute;
+  width: 63px;
+  height: 48px;
+  left: 271px;
+  top: 243px;
+  border: none;
+  background: #ffa21a;
+  border-radius: 36px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.service-card__arrow img {
+  width: 22.21px;
+  height: 19px;
+  transform: rotate(22deg);
+}

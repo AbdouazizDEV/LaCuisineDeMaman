@@ -1,0 +1,41 @@
+<section class="cart-products">
+  <div class="cart-products__items">
+    <div class="cart-products__items-header">
+      <h2>Votre panier ({{ items.length }} articles)</h2>
+    </div>
+    @for (item of items; track item.id) {
+      <app-cart-item-row
+        [item]="item"
+        (decrease)="decrease.emit($event)"
+        (increase)="increase.emit($event)"
+        (remove)="remove.emit($event)"
+      />
+    }
+  </div>
+
+  <div class="cart-products__summary">
+    <h3>Prêt à passer commande ?</h3>
+    <div class="cart-products__separator" aria-hidden="true"></div>
+    <div class="cart-products__invoice">
+      @for (item of items; track item.id) {
+        <p>
+          <span>{{ item.title }}</span>
+          <span>{{ (item.unitPrice * item.quantity) | number: '1.0-0' }} FCFA</span>
+        </p>
+      }
+      <p class="total">
+        <span>Total</span>
+        <span>{{ subtotal | number: '1.0-0' }} FCFA</span>
+      </p>
+    </div>
+    <div class="cart-products__checkout">
+      <app-button
+        [label]="'Commander ( ' + (subtotal | number: '1.0-0') + ' FCFA )'"
+        variant="secondary"
+        size="md"
+        ariaLabel="Commander maintenant"
+        (pressed)="checkout.emit()"
+      />
+    </div>
+  </div>
+</section>

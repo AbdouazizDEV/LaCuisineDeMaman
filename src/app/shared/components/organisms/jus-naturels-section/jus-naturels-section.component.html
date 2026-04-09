@@ -1,0 +1,14 @@
+<section class="jus-section" aria-labelledby="jus-naturels-title">
+  <h2 id="jus-naturels-title" class="jus-section__title">
+    <span>JUS</span> <span class="jus-section__title-accent">NATURELS</span>
+  </h2>
+
+  <div class="jus-section__cards" role="list" aria-label="Jus naturels disponibles">
+    @for (juice of juices; track juice.id) {
+      <app-juice-product-card
+        [product]="juice"
+        (addToCart)="addToCart.emit($event)"
+      />
+    }
+  </div>
+</section>

@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true" class="service-type-content">
+  <div class="service-type-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <main class="service-type-main">
+      <div class="service-type-header">
+        <button type="button" class="service-type-back" aria-label="Retour" (click)="onBackClick()">
+          <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+        </button>
+        <h1>Type de service</h1>
+      </div>
+
+      @for (card of serviceCards; track card.id) {
+        <app-service-type-card
+          [serviceId]="card.id"
+          [title]="card.title"
+          [description]="card.description"
+          [imageSrc]="card.imageSrc"
+          [arrowSrc]="HOME_ASSETS.serviceArrow"
+          [ariaLabel]="card.ariaLabel"
+          [top]="card.top"
+          (cardClick)="onServiceCardClick($event)"
+        />
+      }
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

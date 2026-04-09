@@ -1,0 +1,36 @@
+<section class="contact-section" aria-labelledby="contact-title">
+  <h2 id="contact-title" class="contact-section__title">
+    <span>Contactez</span> <span class="contact-section__title-accent">nous</span>
+  </h2>
+
+  <form class="contact-section__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="contact-section__row">
+      <label class="contact-section__field contact-section__field--half">
+        <span>Prénom</span>
+        <input class="contact-section__input contact-section__input--half" type="text" formControlName="firstName" placeholder="Entrer votre prénom" />
+      </label>
+      <label class="contact-section__field contact-section__field--half">
+        <span>Nom</span>
+        <input class="contact-section__input contact-section__input--half" type="text" formControlName="lastName" placeholder="Entrer votre nom" />
+      </label>
+    </div>
+
+    <label class="contact-section__field contact-section__field--full">
+      <span>Adresse e - mail</span>
+      <input class="contact-section__input contact-section__input--full" type="email" formControlName="email" placeholder="Entrer votre adresse e - mail" />
+    </label>
+
+    <label class="contact-section__field contact-section__field--full">
+      <span>Message</span>
+      <textarea class="contact-section__input contact-section__input--full contact-section__textarea" formControlName="message" rows="3" placeholder="Ecrire votre message"></textarea>
+    </label>
+
+    <app-button
+      [label]="'Envoyer un message'"
+      variant="primary"
+      size="md"
+      type="submit"
+      ariaLabel="Envoyer un message"
+    />
+  </form>
+</section>

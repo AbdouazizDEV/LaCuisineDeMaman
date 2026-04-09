@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.home-content::part(scroll) {
+  display: flex;
+  justify-content: center;
+  background: var(--color-background);
+}
+
+.home-page {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  background: var(--color-background);
+  min-height: 100%;
+}
+
+.home-main {
+  margin-top: 36px;
+  padding-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 88px;
+  transition: transform 300ms cubic-bezier(0.2, 0.9, 0.2, 1), filter 300ms ease;
+}
+
+.home-main.menu-open {
+  transform: translateY(200px);
+  filter: brightness(0.98);
+}

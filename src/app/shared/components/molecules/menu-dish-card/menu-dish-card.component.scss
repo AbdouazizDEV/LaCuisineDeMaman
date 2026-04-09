@@ -1,0 +1,51 @@
+.menu-dish-card {
+  position: relative;
+  display: block;
+  width: 303px;
+  height: 292px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  /* Silhouette unique : un seul arrondi extérieur (évite conflit image + bandeau). */
+  border-radius: var(--radius-dish-image);
+  overflow: hidden;
+  background: var(--color-dish-card-footer);
+}
+
+.menu-dish-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 303px;
+  height: 280px;
+  object-fit: cover;
+  /* Uniquement le haut : pas d’arrondi en bas (sinon “trou” ou coins asymétriques au-dessus du bandeau). */
+  border-radius: var(--radius-dish-image) var(--radius-dish-image) 0 0;
+  display: block;
+}
+
+.menu-dish-card__footer {
+  position: absolute;
+  left: 0;
+  top: 237px;
+  z-index: 1;
+  width: 303px;
+  height: 55px;
+  background: var(--color-dish-card-footer);
+  /* Ordre CSS : haut-gauche, haut-droite, bas-droite, bas-gauche */
+  border-radius: 0 0 var(--radius-dish-image) var(--radius-dish-image);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-dish-card__title {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
+  line-height: 111.9%;
+  text-align: center;
+  color: var(--color-text-on-brand);
+}

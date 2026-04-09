@@ -1,0 +1,82 @@
+<ion-content [fullscreen]="true" class="service-detail-content">
+  <div class="service-detail-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <main class="service-detail-main">
+      <div class="service-detail-header">
+        <button type="button" class="service-detail-back" aria-label="Retour" (click)="onBackClick()">
+          <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+        </button>
+        <h1>{{ pageTitle() }}</h1>
+      </div>
+
+      <div class="service-detail-categories">
+        @for (cat of categories; track cat.id) {
+          <div class="category-block">
+            <button
+              type="button"
+              class="category-header"
+              [attr.aria-expanded]="isCategoryOpen(cat.id)"
+              (click)="toggleCategory(cat.id)"
+            >
+              <img [src]="cat.iconSrc" alt="" width="25" height="25" class="category-header__icon" appImgFallback />
+              <span class="category-header__label">{{ cat.label }}</span>
+              <span class="category-header__chevron" [class.open]="isCategoryOpen(cat.id)"></span>
+            </button>
+
+            @if (isCategoryOpen(cat.id)) {
+              <div class="category-dropdown">
+                @for (item of cat.items; track item.id) {
+                  <button
+                    type="button"
+                    class="menu-item"
+                    (click)="toggleItemSelection(item.id, $event)"
+                  >
+                    <div class="menu-item__text">
+                      <strong>{{ item.title }}</strong>
+                      <p>
+                        <span class="menu-item__price">{{ item.price | number: '1.0-0' }} FCFA</span>
+                        <span class="menu-item__suffix"> / Personne</span>
+                      </p>
+                    </div>
+                    <span
+                      class="menu-item__check"
+                      [class.menu-item__check--on]="isItemSelected(item.id)"
+                      aria-hidden="true"
+                    >
+                      @if (isItemSelected(item.id)) {
+                        <img [src]="HOME_ASSETS.checkIcon" alt="" width="14" height="14" appImgFallback />
+                      }
+                    </span>
+                  </button>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="service-detail-order"
+        [class.service-detail-order--active]="hasSelection()"
+        [disabled]="!hasSelection()"
+        (click)="onOrderClick()"
+      >
+        Commander ( {{ orderTotal() | number: '1.0-0' }} FCFA )
+      </button>
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

@@ -1,0 +1,61 @@
+.app-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  width: var(--app-button-width, auto);
+  min-height: var(--app-button-min-height, var(--cta-command-height));
+  padding: var(--app-button-padding-y, var(--cta-command-padding-y))
+    var(--app-button-padding-x, var(--cta-command-padding-x));
+  border-radius: var(--radius-pill);
+  transition: opacity 0.2s ease;
+}
+
+.app-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app-button[data-variant='primary'] {
+  background: var(--color-brand-orange);
+  color: var(--color-brand-black);
+}
+
+.app-button[data-variant='secondary'] {
+  background: var(--color-brand-teal);
+  color: var(--color-text-on-brand);
+}
+
+.app-button[data-variant='ghost'] {
+  background: transparent;
+  color: var(--color-brand-teal);
+  border: 1px solid var(--color-brand-teal);
+}
+
+.app-button[data-variant='danger'] {
+  background: var(--color-danger);
+  color: var(--color-text-on-brand);
+}
+
+.app-button[data-size='sm'] {
+  --app-button-min-height: 36px;
+  --app-button-padding-y: var(--spacing-xs);
+  --app-button-padding-x: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.app-button[data-size='md'] {
+  font-size: var(--font-size-md);
+}
+
+.app-button[data-size='lg'] {
+  --app-button-min-height: 64px;
+  font-size: var(--font-size-lg);
+}

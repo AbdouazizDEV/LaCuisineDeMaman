@@ -1,0 +1,24 @@
+<article
+  class="service-card"
+  [style.top.px]="top"
+  role="button"
+  tabindex="0"
+  [attr.aria-label]="ariaLabel"
+  (click)="onCardActivate()"
+  (keydown.enter)="onCardActivate()"
+  (keydown.space)="$event.preventDefault(); onCardActivate()"
+>
+  <img class="service-card__image" [src]="imageSrc" [alt]="title" appImgFallback />
+  <div class="service-card__body">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+  </div>
+  <button
+    type="button"
+    class="service-card__arrow"
+    [attr.aria-label]="ariaLabel"
+    (click)="$event.stopPropagation(); onCardActivate()"
+  >
+    <img [src]="arrowSrc" alt="" width="22" height="19" appImgFallback />
+  </button>
+</article>

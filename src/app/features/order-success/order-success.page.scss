@@ -1,0 +1,163 @@
+:host {
+  display: block;
+}
+
+.order-success-content::part(scroll) {
+  display: flex;
+  justify-content: center;
+  background: var(--color-background);
+}
+
+.order-success-page {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+.order-success-main {
+  position: relative;
+  min-height: 760px;
+}
+
+.order-success-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 10px;
+  position: absolute;
+  width: 181px;
+  height: 24px;
+  left: 20px;
+  top: 48px;
+  animation: slide-fade-in 500ms ease both;
+}
+
+.order-success-back {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.order-success-header h1 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.order-success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 14px;
+  position: absolute;
+  width: 211px;
+  height: 234px;
+  left: calc(50% - 211px / 2 + 0.5px);
+  top: calc(50% - 234px / 2 - 172.5px);
+  animation: zoom-fade-in 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.order-success-icon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  animation: pop-bounce 900ms cubic-bezier(0.34, 1.56, 0.64, 1) 120ms both,
+    glow-pulse 2200ms ease-in-out 1200ms infinite;
+}
+
+.order-success-message h2 {
+  width: 245px;
+  height: 28px;
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+  animation: slide-up 520ms ease 220ms both;
+}
+
+.order-success-message p {
+  width: 181px;
+  height: 28px;
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
+  animation: slide-up 520ms ease 320ms both;
+}
+
+@keyframes zoom-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop-bounce {
+  0% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(0, 92, 94, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(0, 92, 94, 0.24));
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

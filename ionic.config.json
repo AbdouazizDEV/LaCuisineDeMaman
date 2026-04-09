@@ -1,0 +1,7 @@
+{
+  "name": "lacuisine-temp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

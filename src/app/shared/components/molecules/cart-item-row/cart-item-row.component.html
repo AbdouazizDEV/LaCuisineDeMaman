@@ -1,0 +1,18 @@
+<article class="cart-item" aria-label="Produit du panier">
+  <img class="cart-item__image" [src]="item.imageUrl" [alt]="item.title" width="80" height="80" appImgFallback />
+
+  <div class="cart-item__meta">
+    <h3 class="cart-item__title">{{ item.title }}</h3>
+    <p class="cart-item__price">{{ item.unitPrice | number: '1.0-0' }} FCA</p>
+  </div>
+
+  <div class="cart-item__counter">
+    <button type="button" aria-label="Diminuer quantité" (click)="decrease.emit(item.id)">−</button>
+    <span>{{ item.quantity }}</span>
+    <button type="button" aria-label="Augmenter quantité" (click)="increase.emit(item.id)">+</button>
+  </div>
+
+  <button class="cart-item__delete" type="button" aria-label="Supprimer du panier" (click)="remove.emit(item.id)">
+    <img [src]="deleteIconSrc" alt="" width="24" height="24" appImgFallback />
+  </button>
+</article>

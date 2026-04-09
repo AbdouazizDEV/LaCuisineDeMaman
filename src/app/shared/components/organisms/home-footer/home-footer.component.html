@@ -1,0 +1,26 @@
+<footer class="home-footer">
+  <img
+    class="home-footer__logo"
+    [src]="logoSrc"
+    alt="La Cuisine de Maman"
+    width="76"
+    height="54"
+    appImgFallback
+  />
+
+  <div class="home-footer__socials" aria-label="Réseaux sociaux">
+    <img [src]="facebookIconSrc" alt="Facebook" width="12" height="20" appImgFallback />
+    <img [src]="instagramIconSrc" alt="Instagram" width="24" height="24" appImgFallback />
+    <img [src]="tiktokIconSrc" alt="TikTok" width="24" height="24" appImgFallback />
+  </div>
+
+  <div class="home-footer__phone-wrap" aria-label="Téléphone">
+    <img [src]="phoneIconSrc" alt="" width="24" height="24" appImgFallback />
+    <p class="home-footer__phone">+221 77 777 77 77</p>
+  </div>
+
+  <div class="home-footer__copyright-wrap" aria-label="Copyright">
+    <img [src]="copyrightIconSrc" alt="" width="18" height="18" appImgFallback />
+    <p class="home-footer__copyright">2026 La Cuisine de Maman</p>
+  </div>
+</footer>

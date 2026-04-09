@@ -1,0 +1,25 @@
+<section class="menu-du-jour" aria-labelledby="menu-du-jour-title">
+  <app-section-heading
+    headingId="menu-du-jour-title"
+    titleBefore="MENU DU "
+    titleAccent="JOUR"
+    subtitle="Des plats comme à la maison"
+  />
+
+  <app-day-filter-chips
+    [options]="filters"
+    [activeFilterId]="selectedFilterId"
+    (filterChange)="filterChange.emit($event)"
+  />
+
+  <app-menu-dish-card [dish]="dish" />
+
+  <app-button
+    class="menu-du-jour__cta"
+    [label]="'Commander maintenant'"
+    variant="primary"
+    size="md"
+    ariaLabel="Commander maintenant"
+    (pressed)="orderNow.emit()"
+  />
+</section>

@@ -1,0 +1,17 @@
+.menu-du-jour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 355px;
+  min-height: 463px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.menu-du-jour__cta {
+  --app-button-width: var(--cta-command-width);
+  --app-button-min-height: var(--cta-command-height);
+  --app-button-padding-y: var(--cta-command-padding-y);
+  --app-button-padding-x: var(--cta-command-padding-x);
+}

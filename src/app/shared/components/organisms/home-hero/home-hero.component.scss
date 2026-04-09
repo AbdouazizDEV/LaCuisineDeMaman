@@ -1,0 +1,71 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+}
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  min-height: var(--hero-height);
+  background: var(--color-brand-orange);
+  overflow: visible;
+}
+
+.home-hero__title {
+  position: absolute;
+  width: 287px;
+  left: calc(50% - 287px / 2 + 0.5px);
+  top: 47px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-display);
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xl);
+  line-height: 111.9%;
+  text-align: center;
+  color: var(--color-brand-black);
+}
+
+.home-hero__title-highlight {
+  color: var(--color-hero-highlight);
+}
+
+.home-hero__visual {
+  position: absolute;
+  width: var(--layout-max-width);
+  height: var(--hero-image-stack-height);
+  left: 0;
+  top: 96px;
+}
+
+.home-hero__dots {
+  position: absolute;
+  width: 59.36px;
+  height: 215.18px;
+  left: 65px;
+  top: 103.82px;
+  object-fit: contain;
+}
+
+.home-hero__chef {
+  position: absolute;
+  width: 240px;
+  height: 308px;
+  left: 84.65px;
+  top: 0;
+  object-fit: contain;
+}
+
+.home-hero__mask {
+  position: absolute;
+  width: var(--layout-max-width);
+  height: 110px;
+  left: 0;
+  top: 275px;
+  object-fit: cover;
+  object-position: bottom center;
+  pointer-events: none;
+}

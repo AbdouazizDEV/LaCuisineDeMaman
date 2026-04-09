@@ -1,0 +1,35 @@
+<header class="home-navbar" role="banner">
+  <div class="home-navbar__inner">
+    <button
+      type="button"
+      class="home-navbar__logo-button"
+      aria-label="Retour a l'accueil"
+      (click)="logoClick.emit()"
+    >
+      <img
+        class="home-navbar__logo"
+        [src]="logoSrc"
+        alt="Cuisine de Maman"
+        width="60"
+        height="60"
+        appImgFallback
+      />
+    </button>
+    <button
+      type="button"
+      class="home-navbar__icon home-navbar__icon--cart"
+      aria-label="Panier"
+      (click)="cartClick.emit()"
+    >
+      <img [src]="cartIconSrc" alt="" width="32" height="35" appImgFallback />
+    </button>
+    <button
+      type="button"
+      class="home-navbar__icon home-navbar__icon--menu"
+      aria-label="Menu"
+      (click)="menuClick.emit()"
+    >
+      <img [src]="menuIconSrc" alt="" width="24" height="18" appImgFallback />
+    </button>
+  </div>
+</header>

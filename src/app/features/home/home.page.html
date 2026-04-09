@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true" class="home-content">
+  <div class="home-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuClick()"
+    />
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <app-home-hero />
+
+    <main class="home-main" [class.menu-open]="menuOpen()">
+      <app-menu-du-jour-section
+        [filters]="dayFilters"
+        [selectedFilterId]="selectedFilterId()"
+        [dish]="menuDish"
+        (filterChange)="onFilterChange($event)"
+        (orderNow)="onOrderNow()"
+      />
+
+      <app-jus-naturels-section
+        [juices]="juices"
+        (addToCart)="onAddJuiceToCart($event)"
+      />
+
+      <app-service-traiteur-section
+        [imageSrc]="HOME_ASSETS.traiteur"
+        (request)="onTraiteurRequest()"
+      />
+
+      <app-avis-clients-section [reviews]="reviews" />
+
+      <app-contact-section (submitMessage)="onContactSubmit()" />
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

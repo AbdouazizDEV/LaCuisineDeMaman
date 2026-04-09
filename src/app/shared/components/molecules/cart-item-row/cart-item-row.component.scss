@@ -1,0 +1,98 @@
+.cart-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 350px;
+  height: 130px;
+  padding: 15px;
+  gap: 17px;
+  isolation: isolate;
+  background: #f1fbfb;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 92, 94, 0.14);
+}
+
+.cart-item__image {
+  width: 80px;
+  height: 80px;
+  border-radius: 27px;
+  object-fit: cover;
+}
+
+.cart-item__meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 127px;
+  height: 66px;
+  gap: 34px;
+}
+
+.cart-item__title {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: var(--color-brand-teal);
+}
+
+.cart-item__price {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cart-item__counter {
+  position: absolute;
+  left: 255px;
+  top: 69px;
+  width: 84px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 8px 9px;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.cart-item__counter button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cart-item__counter button:first-child {
+  background: #f70000;
+}
+
+.cart-item__counter button:last-child {
+  background: var(--color-brand-teal);
+}
+
+.cart-item__delete {
+  position: absolute;
+  left: 298px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}

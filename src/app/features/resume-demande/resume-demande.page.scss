@@ -1,0 +1,375 @@
+:host {
+  display: block;
+}
+
+.resume-demande-content::part(scroll) {
+  display: flex;
+  justify-content: center;
+  background: var(--color-background);
+}
+
+.resume-demande-page {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+.resume-demande-main {
+  position: relative;
+  min-height: 1200px;
+}
+
+.resume-demande-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  left: 20px;
+  top: 24px;
+  width: 225px;
+  height: 24px;
+  padding: 0;
+}
+
+.resume-demande-back {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.resume-demande-header h1 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: #000;
+}
+
+.resume-demande-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  position: absolute;
+  width: 350px;
+  left: calc(50% - 175px);
+  top: 73px;
+  box-sizing: border-box;
+}
+
+.resume-service-card,
+.resume-order-card {
+  width: 350px;
+  box-sizing: border-box;
+  align-self: stretch;
+  border-radius: 17px;
+}
+
+/* Frame 1000004501 */
+.resume-service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  width: 350px;
+  min-height: 393px;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+  background: #fff;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.05);
+  border-radius: 17px;
+}
+
+/* Frame 1000004497 */
+.resume-service-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 11px;
+  width: 310px;
+  min-height: 56px;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+  box-sizing: border-box;
+}
+
+.resume-service-frame__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+.resume-service-frame--type .resume-service-frame__inner {
+  min-height: 56px;
+}
+
+.resume-service-frame--menu {
+  align-items: flex-start;
+  min-height: auto;
+}
+
+.resume-service-frame__inner--menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Frame 1984078000 — Personnes + Lieu */
+.resume-service-frame--people-place {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 310px;
+  min-height: 55px;
+  height: auto;
+}
+
+.resume-service-frame--datetime {
+  align-items: stretch;
+}
+
+.resume-service-frame__inner--datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 56px;
+}
+
+.resume-service-type__label,
+.resume-menu-title,
+.resume-detail-col__label,
+.resume-datetime-block__label {
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  color: #000;
+}
+
+.resume-service-type__label,
+.resume-menu-title {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.resume-service-type__value,
+.resume-detail-col__value,
+.resume-datetime-block__value {
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  color: #005c5e;
+}
+
+.resume-service-type__value {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.resume-menu-title {
+  margin: 0;
+}
+
+.resume-menu-desc {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000;
+}
+
+.resume-detail-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-detail-col__label {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.resume-detail-col__value {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.resume-detail-col__icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.resume-datetime-block__label {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.resume-datetime-block__value {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.resume-order-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  gap: 21px;
+  min-height: 270px;
+  background: #f1fbfb;
+}
+
+.resume-order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+}
+
+.resume-order-row strong {
+  font-weight: 600;
+  color: #005c5e;
+}
+
+.resume-order-row--total {
+  font-size: 17px;
+}
+
+.resume-line {
+  margin: 0 auto;
+  width: 320px;
+  height: 0;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.17);
+  align-self: stretch;
+}
+
+.resume-order-legal {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: 13px;
+  line-height: 18px;
+  color: #005c5e;
+}
+
+.resume-payment-methods,
+.resume-payment-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 350px;
+}
+
+.resume-payment-methods {
+  gap: 17px;
+}
+
+.resume-payment-methods h3,
+.resume-payment-phone h3 {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.resume-payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 318px;
+  min-height: 30px;
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+.resume-payment-row__left {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-payment-phone {
+  gap: 10px;
+}
+
+.resume-payment-phone input {
+  box-sizing: border-box;
+  width: 350px;
+  height: 46px;
+  padding: 10px;
+  background: #fffdfc;
+  border: 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-family: var(--font-family-body);
+  font-size: 15px;
+}
+
+.resume-payment-phone input:focus {
+  outline: none;
+  border-bottom-color: rgba(0, 92, 94, 0.8);
+}
+
+.resume-confirm-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  min-height: 60px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 100px;
+  background: #005c5e;
+  color: #fff;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  cursor: pointer;
+}

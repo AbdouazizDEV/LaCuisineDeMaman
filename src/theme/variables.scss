@@ -1,0 +1,71 @@
+:root {
+  /* Brand — Cuisine de Maman (Figma) */
+  --color-brand-orange: #ffa21a;
+  --color-brand-teal: #005c5e;
+  /* Accent titre (ex. « JOUR » dans « MENU DU JOUR ») */
+  --color-section-title-accent: #125a5d;
+  /* Bandeau plat (carte menu du jour) — aligné maquette */
+  --color-dish-card-footer: var(--color-section-title-accent);
+  --color-brand-black: #050706;
+  --color-hero-highlight: #d32f2f;
+  --color-chip-surface: #f1fbfb;
+  --color-text-on-brand: #ffffff;
+
+  --color-primary: var(--color-brand-orange);
+  --color-secondary: var(--color-brand-teal);
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-text-primary: var(--color-brand-black);
+  --color-text-secondary: #6b7280;
+  --color-accent: var(--color-brand-teal);
+  --color-danger: #ef4444;
+  --color-success: #10b981;
+
+  --font-family-display: 'Kavoon', cursive;
+  --font-family-body: 'Poppins', sans-serif;
+  --font-family-primary: var(--font-family-body);
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 100px;
+  --radius-chip: 1000px;
+  --radius-dish-image: 51px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 8px 24px rgba(35, 31, 32, 0.08);
+  --shadow-modal: 0 20px 40px rgba(35, 31, 32, 0.16);
+
+  /* Layout shell (mobile frame) */
+  --layout-max-width: 390px;
+  --navbar-height: 100px;
+  --navbar-border: 1px solid rgba(5, 7, 6, 0.39);
+  /* Hero frame: title + image stack (96px offset + 385px visual). */
+  --hero-height: 481px;
+  --hero-image-stack-height: 385px;
+
+  --cta-command-width: 259px;
+  --cta-command-height: 60px;
+  --cta-command-padding-y: 15px;
+  --cta-command-padding-x: 20px;
+
+  --ion-color-primary: var(--color-brand-orange);
+  --ion-background-color: var(--color-background);
+  --ion-text-color: var(--color-text-primary);
+}

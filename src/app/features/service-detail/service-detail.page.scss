@@ -1,0 +1,239 @@
+:host {
+  display: block;
+}
+
+.service-detail-content::part(scroll) {
+  display: flex;
+  justify-content: center;
+  background: var(--color-background);
+}
+
+.service-detail-page {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+.service-detail-main {
+  position: relative;
+  min-height: 1100px;
+  padding-bottom: 120px;
+}
+
+.service-detail-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 10px;
+  position: absolute;
+  width: 169px;
+  height: 24px;
+  left: 20px;
+  top: 23px;
+}
+
+.service-detail-back {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.service-detail-header h1 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: #000000;
+}
+
+.service-detail-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 24px;
+  position: absolute;
+  width: 338px;
+  left: 20px;
+  top: 92px;
+}
+
+.category-block {
+  width: 338px;
+}
+
+.category-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 10px;
+  width: 338px;
+  height: 45px;
+  background: #fafafa;
+  border: 1px solid rgba(255, 162, 26, 0.16);
+  border-radius: 17px;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.category-header__label {
+  width: 104px;
+  height: 24px;
+  font-family: var(--font-family-heading);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #000000;
+  text-align: left;
+  flex: 1;
+  width: auto;
+}
+
+.category-header__chevron {
+  width: 10px;
+  height: 10px;
+  margin-left: auto;
+  border-right: 2px solid #9ca3af;
+  border-bottom: 2px solid #9ca3af;
+  transform: rotate(-45deg);
+  transition: transform 200ms ease;
+  flex-shrink: 0;
+}
+
+.category-header__chevron.open {
+  transform: rotate(45deg);
+}
+
+.category-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 14px;
+  width: 338px;
+  margin-top: 14px;
+}
+
+.menu-item {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px 10px 20px;
+  gap: 10px;
+  width: 338px;
+  min-height: 73px;
+  border: 1px solid #ffa21a;
+  border-radius: 17px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  isolation: isolate;
+}
+
+.menu-item__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-item__text strong {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.menu-item__text p {
+  margin: 4px 0 0;
+  font-family: var(--font-family-heading);
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.menu-item__price {
+  color: #005c5e;
+  font-weight: 600;
+}
+
+.menu-item__suffix {
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.menu-item__check {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 300px;
+  top: 50%;
+  margin-top: -12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #ffffff;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.menu-item__check--on {
+  background: #ffa21a;
+  border: 1px solid #ffa21a;
+}
+
+.service-detail-order {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  gap: 10px;
+  position: absolute;
+  width: 259px;
+  height: 60px;
+  left: 63px;
+  top: 790px;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+  color: #ffffff;
+  background: #000000;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.service-detail-order--active:not(:disabled) {
+  background: #125a5d;
+  cursor: pointer;
+}
+
+.service-detail-order:disabled {
+  background: #000000;
+  opacity: 1;
+  cursor: not-allowed;
+}

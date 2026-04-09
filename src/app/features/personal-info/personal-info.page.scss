@@ -1,0 +1,157 @@
+:host {
+  display: block;
+}
+
+.personal-info-content::part(scroll) {
+  display: flex;
+  justify-content: center;
+  background: var(--color-background);
+}
+
+.personal-info-page {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+.personal-info-main {
+  position: relative;
+  min-height: 920px;
+}
+
+.personal-info-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  width: 243px;
+  height: 24px;
+  left: 20px;
+  top: 48px;
+}
+
+.personal-info-back {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.personal-info-header h1 {
+  width: 213px;
+  height: 24px;
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: #000000;
+}
+
+.personal-info-form-container {
+  position: absolute;
+  width: 387px;
+  height: 801px;
+  left: calc(50% - 387px / 2 - 0.5px);
+  top: 98px;
+  background: #fffdfc;
+}
+
+.personal-info-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 57px;
+  position: absolute;
+  width: 388px;
+  height: 647px;
+  left: -1px;
+  top: 50px;
+}
+
+.personal-info-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 30px;
+  width: 388px;
+  height: 530px;
+}
+
+.personal-info-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 10px;
+  width: 340px;
+  height: 82px;
+}
+
+.personal-info-field label {
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #000000;
+}
+
+.personal-info-field input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 340px;
+  height: 46px;
+  background: #fffdfc;
+  border: 0;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-family: var(--font-family-body);
+  font-size: 16px;
+  color: #000000;
+}
+
+.personal-info-field input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.personal-info-field input:focus {
+  outline: none;
+  border-bottom-color: rgba(0, 92, 94, 0.8);
+}
+
+.personal-info-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  gap: 10px;
+  width: 259px;
+  height: 60px;
+  border: none;
+  background: #005c5e;
+  border-radius: 100px;
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  color: #ffffff;
+  cursor: pointer;
+}

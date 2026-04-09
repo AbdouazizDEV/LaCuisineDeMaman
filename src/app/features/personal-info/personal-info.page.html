@@ -1,0 +1,89 @@
+<ion-content [fullscreen]="true" class="personal-info-content">
+  <div class="personal-info-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <main class="personal-info-main">
+      <div class="personal-info-header">
+        <button type="button" class="personal-info-back" aria-label="Retour" (click)="onBackClick()">
+          <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+        </button>
+        <h1>Informations personnelles</h1>
+      </div>
+
+      <section class="personal-info-form-container" aria-label="Informations personnelles">
+        <form class="personal-info-form" (ngSubmit)="onSubmit()">
+          <div class="personal-info-fields">
+            <div class="personal-info-field">
+              <label for="firstName">Prénom</label>
+              <input
+                id="firstName"
+                type="text"
+                name="firstName"
+                [(ngModel)]="firstName"
+                placeholder="Entrer votre nom complet"
+              />
+            </div>
+
+            <div class="personal-info-field">
+              <label for="lastName">Nom</label>
+              <input
+                id="lastName"
+                type="text"
+                name="lastName"
+                [(ngModel)]="lastName"
+                placeholder="Entrer votre nom complet"
+              />
+            </div>
+
+            <div class="personal-info-field">
+              <label for="address">Adresse</label>
+              <input
+                id="address"
+                type="text"
+                name="address"
+                [(ngModel)]="address"
+                placeholder="Entrer votre adresse"
+              />
+            </div>
+
+            <div class="personal-info-field">
+              <label for="phone">Numéro de téléphone</label>
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                [(ngModel)]="phone"
+                placeholder="Entrer votre numero"
+              />
+            </div>
+
+            <div class="personal-info-field">
+              <label for="note">Message pour la cuisine ( optionnel )</label>
+              <input
+                id="note"
+                type="text"
+                name="note"
+                [(ngModel)]="note"
+                placeholder="Exemple : Pos de piemnt"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="personal-info-submit">Soumettre</button>
+        </form>
+      </section>
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

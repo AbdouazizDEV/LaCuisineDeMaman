@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true" class="menu-dish-detail-content">
+  <div class="menu-dish-detail-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    @if (detail(); as d) {
+      <main class="menu-dish-detail-main">
+        <div class="menu-dish-detail-header">
+          <button type="button" class="menu-dish-detail-back" aria-label="Retour" (click)="onBackClick()">
+            <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+          </button>
+          <p class="menu-dish-detail-header__crumb">Menu du jour</p>
+        </div>
+
+        <div class="menu-dish-detail-media">
+          <img
+            class="menu-dish-detail-hero"
+            [src]="mainImage()"
+            [alt]="d.title"
+            width="354"
+            height="377"
+            appImgFallback
+          />
+
+          <div class="menu-dish-detail-carousel" aria-roledescription="carousel">
+            <button type="button" class="menu-dish-detail-nav" aria-label="Image précédente" (click)="prevSlide()">
+              <img
+                class="menu-dish-detail-nav__icon menu-dish-detail-nav__icon--prev"
+                [src]="HOME_ASSETS.carouselNavNext"
+                alt=""
+                width="20"
+                height="20"
+                appImgFallback
+              />
+            </button>
+
+            <div class="menu-dish-detail-thumbs" role="list">
+              @for (src of d.gallery; track $index) {
+                <button
+                  type="button"
+                  class="menu-dish-detail-thumb"
+                  [class.menu-dish-detail-thumb--active]="selectedIndex() === $index"
+                  (click)="selectSlide($index)"
+                  [attr.aria-label]="'Aperçu ' + ($index + 1)"
+                  role="listitem"
+                >
+                  <img [src]="src" [alt]="''" width="61" height="77" appImgFallback />
+                </button>
+              }
+            </div>
+
+            <button type="button" class="menu-dish-detail-nav" aria-label="Image suivante" (click)="nextSlide()">
+              <img
+                class="menu-dish-detail-nav__icon"
+                [src]="HOME_ASSETS.carouselNavNext"
+                alt=""
+                width="20"
+                height="20"
+                appImgFallback
+              />
+            </button>
+          </div>
+        </div>
+
+        <h1 class="menu-dish-detail-dish-title">{{ d.title }}</h1>
+
+        <p class="menu-dish-detail-desc">{{ d.description }}</p>
+
+        <app-button
+          class="menu-dish-detail-cta"
+          [label]="'Commander maintenant'"
+          variant="primary"
+          size="md"
+          ariaLabel="Commander maintenant"
+          (pressed)="onOrderNow()"
+        />
+      </main>
+    }
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

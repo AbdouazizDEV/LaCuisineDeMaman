@@ -1,0 +1,42 @@
+.jus-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.jus-section__title {
+  margin: 0;
+  width: 240px;
+  height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-xxl);
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.jus-section__title-accent {
+  color: var(--color-section-title-accent);
+  margin-left: 6px;
+}
+
+.jus-section__cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  width: 370px;
+  height: 370px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.jus-section__cards::-webkit-scrollbar {
+  display: none;
+}

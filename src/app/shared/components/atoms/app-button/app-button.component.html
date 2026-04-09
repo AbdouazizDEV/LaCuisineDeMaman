@@ -1,0 +1,11 @@
+<button
+  [attr.type]="type"
+  class="app-button"
+  [attr.data-variant]="variant"
+  [attr.data-size]="size"
+  [disabled]="disabled"
+  [attr.aria-label]="ariaLabel || label"
+  (click)="onClick()"
+>
+  {{ label }}
+</button>

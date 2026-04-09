@@ -1,0 +1,17 @@
+<article
+  class="menu-dish-card"
+  aria-label="Plat du jour"
+  [routerLink]="['/menu-dish', dish.id]"
+>
+  <img
+    class="menu-dish-card__image"
+    [src]="dish.imageUrl"
+    [alt]="dish.title"
+    width="303"
+    height="280"
+    appImgFallback
+  />
+  <footer class="menu-dish-card__footer">
+    <h3 class="menu-dish-card__title">{{ dish.title }}</h3>
+  </footer>
+</article>

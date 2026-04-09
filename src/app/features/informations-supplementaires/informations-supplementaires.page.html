@@ -1,0 +1,115 @@
+<ion-content [fullscreen]="true" class="extra-info-content">
+  <div class="extra-info-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <main class="extra-info-main">
+      <div class="extra-info-header">
+        <button type="button" class="extra-info-back" aria-label="Retour" (click)="onBackClick()">
+          <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+        </button>
+        <h1>Informations supplémentaires</h1>
+      </div>
+
+      <section class="extra-info-form-wrap" aria-label="Informations supplémentaires">
+        <form class="extra-info-form" (ngSubmit)="onSubmit()">
+          <div class="extra-info-fields">
+            <div class="extra-field">
+              <label class="extra-field__label" for="guestCountDisplay"
+                >Nombre de personnes <span class="extra-field__req">*</span></label
+              >
+              <div class="extra-counter" id="guestCountDisplay" aria-live="polite">
+                <button
+                  type="button"
+                  class="extra-counter__btn"
+                  aria-label="Diminuer le nombre de personnes"
+                  (click)="onDecreaseGuests()"
+                >
+                  −
+                </button>
+                <span class="extra-counter__value">{{ guestCount() }}</span>
+                <button
+                  type="button"
+                  class="extra-counter__btn"
+                  aria-label="Augmenter le nombre de personnes"
+                  (click)="onIncreaseGuests()"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div class="extra-field">
+              <label class="extra-field__label" for="eventLocation"
+                >Lieu de l'évènement <span class="extra-field__req">*</span></label
+              >
+              <input
+                id="eventLocation"
+                type="text"
+                name="eventLocation"
+                [(ngModel)]="eventLocation"
+                placeholder="Exemple: Liberté 6"
+                class="extra-input"
+              />
+            </div>
+
+            <div class="extra-field">
+              <label class="extra-field__label" for="eventStart"
+                >Date et heure de début de l'évènement <span class="extra-field__req">*</span></label
+              >
+              <input
+                id="eventStart"
+                type="text"
+                name="eventStart"
+                [(ngModel)]="eventStart"
+                placeholder="Exemple: 12/12/2024 à 14h30"
+                class="extra-input"
+              />
+            </div>
+
+            <div class="extra-field">
+              <label class="extra-field__label" for="eventEnd"
+                >Date et heure de fin de l'évènement <span class="extra-field__req">*</span></label
+              >
+              <input
+                id="eventEnd"
+                type="text"
+                name="eventEnd"
+                [(ngModel)]="eventEnd"
+                placeholder="Exemple: 12/12/2024 à 14h30"
+                class="extra-input"
+              />
+            </div>
+
+            <div class="extra-field">
+              <label class="extra-field__label" for="kitchenMessage"
+                >Message pour la cuisine <span class="extra-field__req">*</span></label
+              >
+              <input
+                id="kitchenMessage"
+                type="text"
+                name="kitchenMessage"
+                [(ngModel)]="kitchenMessage"
+                placeholder="Exemple: être ponctuelle dans l'heure"
+                class="extra-input"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="extra-info-submit">Soumettre sa demande</button>
+        </form>
+      </section>
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

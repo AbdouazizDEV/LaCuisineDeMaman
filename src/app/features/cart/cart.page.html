@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" class="cart-content">
+  <div class="cart-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <main class="cart-main">
+      <app-cart-products-section
+        [items]="cartItems()"
+        [subtotal]="subtotal()"
+        (decrease)="onDecrease($event)"
+        (increase)="onIncrease($event)"
+        (remove)="onRemove($event)"
+        (checkout)="onCheckout()"
+      />
+
+      <section class="cart-drinks">
+        <h2>Ajouter une boisson</h2>
+        <div class="cart-drinks__list">
+          @for (juice of juices; track juice.id) {
+            <app-juice-product-card [product]="juice" (addToCart)="onAddJuiceToCart($event)" />
+          }
+        </div>
+      </section>
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

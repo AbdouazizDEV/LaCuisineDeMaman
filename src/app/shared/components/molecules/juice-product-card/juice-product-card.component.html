@@ -1,0 +1,35 @@
+<article class="juice-card" [attr.aria-label]="product.title">
+  <img
+    class="juice-card__image"
+    [src]="product.imageUrl"
+    [alt]="product.title"
+    width="256"
+    height="218"
+    appImgFallback
+  />
+
+  <div class="juice-card__meta">
+    <h3 class="juice-card__title">{{ product.title }}</h3>
+    <p class="juice-card__prices">
+      <span class="juice-card__price-current">{{ product.priceCurrent }}</span>
+      @if (product.priceOld) {
+        <span class="juice-card__price-old">{{ product.priceOld }}</span>
+      }
+    </p>
+  </div>
+
+  <button
+    type="button"
+    class="juice-card__button"
+    [attr.data-sold-out]="product.isSoldOut === true"
+    [attr.aria-label]="'Ajouter ' + product.title + ' au panier'"
+    (click)="onAddToCart()"
+  >
+    <span>Ajouter au panier</span>
+    <img [src]="addIconSrc" alt="" width="16" height="16" appImgFallback />
+  </button>
+
+  @if (product.isSoldOut) {
+    <span class="juice-card__badge-sold-out" aria-label="Produit épuisé">Epuisé</span>
+  }
+</article>

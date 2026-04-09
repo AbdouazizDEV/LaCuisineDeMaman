@@ -1,0 +1,28 @@
+<section class="traiteur-section" aria-labelledby="service-traiteur-title">
+  <h2 id="service-traiteur-title" class="traiteur-section__title">
+    <span>SERVICE</span> <span class="traiteur-section__title-accent">TRAITEUR</span>
+  </h2>
+
+  <img
+    class="traiteur-section__image"
+    [src]="imageSrc"
+    alt="Service traiteur"
+    width="313"
+    height="176"
+    appImgFallback
+  />
+
+  <p class="traiteur-section__text">
+    Confiez votre événement à La Cuisine de Maman.<br />
+    Nous proposons des formules traiteur adaptées à vos envies : petit déjeuner, déjeuner, cocktail
+    ou dessert.
+  </p>
+
+  <app-button
+    [label]="'Faire une demande'"
+    variant="primary"
+    size="md"
+    ariaLabel="Faire une demande de service traiteur"
+    (pressed)="request.emit()"
+  />
+</section>

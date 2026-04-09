@@ -1,0 +1,133 @@
+<ion-content [fullscreen]="true" class="order-summary-content">
+  <div class="order-summary-page">
+    <app-home-navbar
+      (logoClick)="onLogoClick()"
+      (cartClick)="onCartClick()"
+      (menuClick)="onMenuToggle()"
+    />
+
+    <app-nav-dropdown-menu
+      [open]="menuOpen()"
+      [items]="menuItems"
+      (itemSelected)="onMenuClose()"
+    />
+
+    <main class="order-summary-main">
+      <div class="order-summary-header">
+        <button type="button" class="order-summary-back" aria-label="Retour" (click)="onBackClick()">
+          <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+        </button>
+        <h1>Résumé de la commande</h1>
+      </div>
+
+      <section class="order-summary-wrapper">
+        <article class="order-client-card">
+          <div class="order-client-item">
+            <h3>Prénom</h3>
+            <p>Babacar</p>
+          </div>
+          <div class="order-client-item">
+            <h3>Nom</h3>
+            <p>Nguirane</p>
+          </div>
+          <div class="order-client-item">
+            <h3>Numéro téléphone</h3>
+            <p class="with-icon">
+              <img [src]="HOME_ASSETS.callIcon" alt="" width="16" height="16" appImgFallback />
+              77 378 29 56
+            </p>
+          </div>
+          <div class="order-client-item">
+            <h3>Jour du menu</h3>
+            <p class="with-icon">
+              <img [src]="HOME_ASSETS.dateIcon" alt="" width="16" height="16" appImgFallback />
+              Lundi
+            </p>
+          </div>
+          <div class="order-client-item">
+            <h3>Adresse</h3>
+            <p class="with-icon">
+              <img [src]="HOME_ASSETS.placeIcon" alt="" width="16" height="16" appImgFallback />
+              Cite keur damel
+            </p>
+          </div>
+        </article>
+
+        <div class="order-payment-section">
+          <article class="order-products-card">
+            <p class="order-products-top">
+              <span>Nombre de produits choisis</span>
+              <strong>3</strong>
+            </p>
+            <div class="line"></div>
+            <p>
+              <span>1x Thiebou dieune</span>
+              <span>3 500 FCFA</span>
+            </p>
+            <p>
+              <span>1x Jus bissap</span>
+              <span>3 500 FCFA</span>
+            </p>
+            <div class="line"></div>
+            <p class="total">
+              <span>Total à payer</span>
+              <strong>7.000 FCFA</strong>
+            </p>
+          </article>
+
+          <section class="payment-choice">
+            <h3>Paiement</h3>
+            <label>
+              <input type="radio" name="paymentType" value="delivery" [(ngModel)]="paymentType" />
+              Paiement à la livraison
+            </label>
+            <label>
+              <input type="radio" name="paymentType" value="online" [(ngModel)]="paymentType" />
+              Paiement en ligne
+            </label>
+          </section>
+
+          <section class="payment-methods">
+            <h3>Mode de paiement</h3>
+            <label class="payment-method-row">
+              <span class="method-left">
+                <img [src]="HOME_ASSETS.waveLogo" alt="Wave" width="30" height="30" appImgFallback />
+                Wave
+              </span>
+              <input type="radio" name="paymentMethod" value="wave" [(ngModel)]="paymentMethod" />
+            </label>
+            <label class="payment-method-row">
+              <span class="method-left">
+                <img
+                  [src]="HOME_ASSETS.orangeMoneyLogo"
+                  alt="Orange Money"
+                  width="30"
+                  height="30"
+                  appImgFallback
+                />
+                Orange Money
+              </span>
+              <input type="radio" name="paymentMethod" value="orange" [(ngModel)]="paymentMethod" />
+            </label>
+          </section>
+
+          <section class="payment-phone">
+            <h3>Numéro de téléphone</h3>
+            <input
+              type="tel"
+              name="paymentPhone"
+              [(ngModel)]="paymentPhone"
+              placeholder="Exemple: 77 777 77 77"
+            />
+          </section>
+
+          <button type="button" class="order-validate-btn" (click)="onValidateNow()">
+            Valider maintenant
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <app-home-footer [logoSrc]="HOME_ASSETS.logo" />
+  </div>
+</ion-content>

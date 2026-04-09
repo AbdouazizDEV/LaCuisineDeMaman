@@ -1,0 +1,15 @@
+.day-filter-chips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 355px;
+  height: 31px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.day-filter-chips::-webkit-scrollbar {
+  display: none;
+}
