@@ -38,6 +38,10 @@ export const appRoutes: Routes = [
     loadComponent: () => import('./features/login/login.page').then((m) => m.LoginPage),
   },
   {
+    path: 'register',
+    loadComponent: () => import('./features/register/register.page').then((m) => m.RegisterPage),
+  },
+  {
     path: 'search',
     loadComponent: () => import('./features/search/search.page').then((m) => m.SearchPage),
   },

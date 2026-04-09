@@ -1,0 +1,176 @@
+:host {
+  display: block;
+}
+
+.register-content::part(scroll) {
+  --background: #fffdfc;
+  background: #fffdfc;
+}
+
+.register-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 24px 20px 40px;
+  background: #fffdfc;
+}
+
+.register-back {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+}
+
+.register-logo {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+
+.register-title {
+  margin: 0 0 8px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font-family-display);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #000;
+}
+
+.register-subtitle {
+  margin: 0 0 28px;
+  text-align: center;
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: #374151;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 335px;
+  margin: 0 auto;
+}
+
+.register-field-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.register-label {
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000;
+}
+
+.register-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  padding: 10px;
+  border: none;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  background: #fffdfc;
+  font-family: var(--font-family-body);
+  font-size: 15px;
+  line-height: 22px;
+  color: #000;
+  outline: none;
+}
+
+.register-input::placeholder {
+  color: #9ca3af;
+}
+
+.register-input-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  padding: 10px;
+  gap: 10px;
+  background: #fffdfc;
+  border: none;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.register-input-row__icon {
+  flex-shrink: 0;
+}
+
+.register-input--with-icon {
+  flex: 1;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.register-submit {
+  margin-top: 8px;
+  width: 100%;
+  max-width: 335px;
+  align-self: center;
+  --app-button-width: 100%;
+  --app-button-min-height: 54px;
+  --app-button-padding-y: 15px;
+  --app-button-padding-x: 20px;
+}
+
+:host ::ng-deep app-button.register-submit .app-button {
+  width: 100%;
+  border-radius: 80px;
+  font-weight: 600;
+  color: var(--color-brand-black);
+  background: #ffa21a;
+}
+
+.register-login-hint {
+  margin: 28px 0 0;
+  text-align: center;
+  font-family: var(--font-family-body);
+  font-size: 14px;
+  line-height: 22px;
+  color: #000;
+}
+
+.register-login-hint__link {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--color-brand-teal);
+}

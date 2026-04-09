@@ -1,0 +1,123 @@
+<ion-content [fullscreen]="true" class="register-content">
+  <div class="register-page">
+    <button type="button" class="register-back" (click)="onBack()" aria-label="Retour">
+      <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+      <span>Retour</span>
+    </button>
+
+    <img
+      class="register-logo"
+      [src]="HOME_ASSETS.logo"
+      alt="La Cuisine de Maman"
+      width="60"
+      height="60"
+      appImgFallback
+    />
+
+    <h1 class="register-title">Créer un compte</h1>
+    <p class="register-subtitle">Rejoignez La Cuisine de Maman</p>
+
+    <form class="register-form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="register-field-group">
+        <label class="register-label" for="reg-lastname">Nom</label>
+        <input
+          id="reg-lastname"
+          class="register-input"
+          type="text"
+          name="lastName"
+          [(ngModel)]="lastName"
+          autocomplete="family-name"
+          placeholder="Entrer votre nom"
+        />
+      </div>
+
+      <div class="register-field-group">
+        <label class="register-label" for="reg-firstname">Prénom</label>
+        <input
+          id="reg-firstname"
+          class="register-input"
+          type="text"
+          name="firstName"
+          [(ngModel)]="firstName"
+          autocomplete="given-name"
+          placeholder="Entrer votre prénom"
+        />
+      </div>
+
+      <div class="register-field-group">
+        <label class="register-label" for="reg-email">Email</label>
+        <div class="register-input-row">
+          <img [src]="HOME_ASSETS.loginMailIcon" alt="" width="20" height="20" class="register-input-row__icon" appImgFallback />
+          <input
+            id="reg-email"
+            class="register-input register-input--with-icon"
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            autocomplete="email"
+            placeholder="exemple@email.com"
+          />
+        </div>
+      </div>
+
+      <div class="register-field-group">
+        <label class="register-label" for="reg-phone">Numéro de téléphone</label>
+        <input
+          id="reg-phone"
+          class="register-input"
+          type="tel"
+          name="phone"
+          [(ngModel)]="phone"
+          autocomplete="tel"
+          placeholder="Entrer votre numéro"
+        />
+      </div>
+
+      <div class="register-field-group">
+        <label class="register-label" for="reg-password">Mot de passe</label>
+        <div class="register-input-row">
+          <img [src]="HOME_ASSETS.loginLockIcon" alt="" width="20" height="20" class="register-input-row__icon" appImgFallback />
+          <input
+            id="reg-password"
+            class="register-input register-input--with-icon"
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            autocomplete="new-password"
+            placeholder="Créer un mot de passe"
+          />
+        </div>
+      </div>
+
+      <div class="register-field-group">
+        <label class="register-label" for="reg-confirm">Confirmer le mot de passe</label>
+        <div class="register-input-row">
+          <img [src]="HOME_ASSETS.loginLockIcon" alt="" width="20" height="20" class="register-input-row__icon" appImgFallback />
+          <input
+            id="reg-confirm"
+            class="register-input register-input--with-icon"
+            type="password"
+            name="confirmPassword"
+            [(ngModel)]="confirmPassword"
+            autocomplete="new-password"
+            placeholder="Confirmer votre mot de passe"
+          />
+        </div>
+      </div>
+
+      <app-button
+        class="register-submit"
+        [type]="'submit'"
+        [label]="'Créer mon compte'"
+        variant="primary"
+        size="md"
+        ariaLabel="Créer mon compte"
+      />
+    </form>
+
+    <p class="register-login-hint">
+      Déjà un compte ?
+      <button type="button" class="register-login-hint__link" (click)="goToLogin()">Se connecter</button>
+    </p>
+  </div>
+</ion-content>

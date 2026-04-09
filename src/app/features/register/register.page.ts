@@ -8,35 +8,35 @@ import { ImgFallbackDirective } from '../../shared/directives/img-fallback.direc
 import { HOME_ASSETS } from '../../shared/constants/home-assets.constants';
 
 @Component({
-  selector: 'app-login-page',
+  selector: 'app-register-page',
   standalone: true,
   imports: [IonContent, FormsModule, AppButtonComponent, ImgFallbackDirective],
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginPage {
+export class RegisterPage {
   private readonly location = inject(Location);
   private readonly router = inject(Router);
 
   readonly HOME_ASSETS = HOME_ASSETS;
 
-  emailOrPhone = '';
+  lastName = '';
+  firstName = '';
+  email = '';
+  phone = '';
   password = '';
+  confirmPassword = '';
+
+  onBack(): void {
+    this.location.back();
+  }
 
   onSubmit(): void {
-    // Connexion à brancher sur l’API.
+    // Inscription à brancher sur l’API.
   }
 
-  onForgotPassword(): void {
-    // Mot de passe oublié — à brancher.
-  }
-
-  onCreateAccount(): void {
-    void this.router.navigateByUrl('/register');
-  }
-
-  onBackClick(): void {
-    this.location.back();
+  goToLogin(): void {
+    void this.router.navigateByUrl('/login');
   }
 }

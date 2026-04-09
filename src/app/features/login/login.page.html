@@ -1,5 +1,10 @@
 <ion-content [fullscreen]="true" class="login-content">
   <div class="login-page">
+    <button type="button" class="login-back" (click)="onBackClick()" aria-label="Retour">
+      <img [src]="HOME_ASSETS.backIcon" alt="" width="24" height="24" appImgFallback />
+      <span>Retour</span>
+    </button>
+
     <img
       class="login-logo"
       [src]="HOME_ASSETS.logo"
