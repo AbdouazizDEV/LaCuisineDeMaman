@@ -1,16 +1,12 @@
 <nav class="nav-dropdown" [class.open]="open" aria-label="Menu principal">
   <div class="nav-dropdown__list">
     @for (item of items; track item.id) {
-      <a
-        class="nav-dropdown__item"
-        [routerLink]="item.route"
-        (click)="itemSelected.emit()"
-      >
+      <button type="button" class="nav-dropdown__item" (click)="onItemClick(item)">
         @if (isLoginItem(item)) {
           <img class="nav-dropdown__item-icon" [src]="userIconSrc" alt="" width="16" height="16" appImgFallback />
         }
         {{ item.label }}
-      </a>
+      </button>
     }
   </div>
 </nav>

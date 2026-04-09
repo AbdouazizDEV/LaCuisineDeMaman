@@ -50,4 +50,6 @@ export const HOME_ASSETS = {
   tiktokIcon: assetPath('assets/icon/Vector.svg'),
   phoneIcon: assetPath('assets/icon/Vector (1).svg'),
   copyrightIcon: assetPath('assets/icon/Vector (2).svg'),
+  loginMailIcon: assetPath('assets/icon/login-mail-outline.svg'),
+  loginLockIcon: assetPath('assets/icon/login-lock-outline.svg'),
 } as const;

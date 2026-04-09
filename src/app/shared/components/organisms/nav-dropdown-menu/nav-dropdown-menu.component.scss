@@ -40,6 +40,11 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
   font-family: var(--font-family-body);
   font-style: normal;
   font-weight: 400;
@@ -50,6 +55,7 @@
   text-decoration: none;
   position: relative;
   transition: transform 180ms ease, color 180ms ease;
+  box-sizing: border-box;
 }
 
 .nav-dropdown__item-icon {

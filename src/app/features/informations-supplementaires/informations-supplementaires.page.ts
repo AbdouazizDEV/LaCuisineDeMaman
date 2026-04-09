@@ -9,7 +9,7 @@ import { HomeFooterComponent } from '../../shared/components/organisms/home-foot
 import { NavDropdownMenuComponent } from '../../shared/components/organisms/nav-dropdown-menu/nav-dropdown-menu.component';
 import { ImgFallbackDirective } from '../../shared/directives/img-fallback.directive';
 import { HOME_ASSETS } from '../../shared/constants/home-assets.constants';
-import { INavMenuItem } from '../../shared/models/home-ui.model';
+import { DEFAULT_NAV_MENU_ITEMS } from '../../shared/constants/nav-menu.constants';
 import { CateringRequestStateService } from '../../shared/services/catering-request-state.service';
 
 @Component({
@@ -34,12 +34,7 @@ export class InformationsSupplementairesPage {
 
   readonly HOME_ASSETS = HOME_ASSETS;
   readonly menuOpen = signal(false);
-  readonly menuItems: INavMenuItem[] = [
-    { id: 'menu-1', label: 'Menu du jour', route: '/home' },
-    { id: 'menu-2', label: 'Service traiteur', route: '/home' },
-    { id: 'menu-3', label: 'Contacts', route: '/home' },
-    { id: 'menu-4', label: 'Se connecter', route: '/profile' },
-  ];
+  readonly menuItems = DEFAULT_NAV_MENU_ITEMS;
 
   readonly returnServiceId = toSignal(
     this.route.queryParamMap.pipe(map((q) => q.get('serviceId') ?? 'standard')),

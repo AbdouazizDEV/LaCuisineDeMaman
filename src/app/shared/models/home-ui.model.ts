@@ -45,4 +45,6 @@ export interface INavMenuItem {
   id: string;
   label: string;
   route: string;
+  /** Ancre sur `route` (ex. `menu-du-jour` → `/home#menu-du-jour`). */
+  fragment?: string;
 }

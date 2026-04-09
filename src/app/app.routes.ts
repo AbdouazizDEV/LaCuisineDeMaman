@@ -34,6 +34,10 @@ export const appRoutes: Routes = [
     loadComponent: () => import('./features/profile/profile.page').then((m) => m.ProfilePage),
   },
   {
+    path: 'login',
+    loadComponent: () => import('./features/login/login.page').then((m) => m.LoginPage),
+  },
+  {
     path: 'search',
     loadComponent: () => import('./features/search/search.page').then((m) => m.SearchPage),
   },

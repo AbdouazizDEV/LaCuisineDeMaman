@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-page">
+    <img
+      class="login-logo"
+      [src]="HOME_ASSETS.logo"
+      alt="La Cuisine de Maman"
+      width="60"
+      height="60"
+      appImgFallback
+    />
+
+    <h1 class="login-title">
+      <span class="login-title__line login-title__line--dark">Bienvenue sur</span>
+      <span class="login-title__line login-title__line--teal">la cuisine de maman</span>
+    </h1>
+
+    <form class="login-form" (ngSubmit)="onSubmit()" novalidate>
+      <!-- Frame 114 -->
+      <div class="login-form__fields">
+        <label class="login-field">
+          <span class="visually-hidden">Email ou numéro de téléphone</span>
+          <img [src]="HOME_ASSETS.loginMailIcon" alt="" width="20" height="20" class="login-field__icon" appImgFallback />
+          <input
+            class="login-field__input"
+            type="text"
+            name="emailOrPhone"
+            [(ngModel)]="emailOrPhone"
+            autocomplete="username"
+            placeholder="Email ou numéro de téléphone"
+          />
+        </label>
+
+        <label class="login-field">
+          <span class="visually-hidden">Mot de passe</span>
+          <img [src]="HOME_ASSETS.loginLockIcon" alt="" width="20" height="20" class="login-field__icon" appImgFallback />
+          <input
+            class="login-field__input"
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            autocomplete="current-password"
+            placeholder="Mot de passe"
+          />
+        </label>
+      </div>
+
+      <div class="login-form__forgot-row">
+        <button type="button" class="login-forgot" (click)="onForgotPassword()">Mot de passe oublié</button>
+      </div>
+
+      <app-button
+        class="login-submit"
+        [type]="'submit'"
+        [label]="'Se connecter'"
+        variant="primary"
+        size="md"
+        ariaLabel="Se connecter"
+      />
+    </form>
+
+    <p class="login-register">
+      Vous n’avez pas de compte ?
+      <button type="button" class="login-register__link" (click)="onCreateAccount()">Créer un compte</button>
+    </p>
+  </div>
+</ion-content>

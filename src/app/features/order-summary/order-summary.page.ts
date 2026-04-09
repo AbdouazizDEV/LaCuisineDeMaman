@@ -7,7 +7,7 @@ import { NavDropdownMenuComponent } from '../../shared/components/organisms/nav-
 import { HomeFooterComponent } from '../../shared/components/organisms/home-footer/home-footer.component';
 import { ImgFallbackDirective } from '../../shared/directives/img-fallback.directive';
 import { HOME_ASSETS } from '../../shared/constants/home-assets.constants';
-import { INavMenuItem } from '../../shared/models/home-ui.model';
+import { DEFAULT_NAV_MENU_ITEMS } from '../../shared/constants/nav-menu.constants';
 
 @Component({
   selector: 'app-order-summary-page',
@@ -27,12 +27,7 @@ import { INavMenuItem } from '../../shared/models/home-ui.model';
 export class OrderSummaryPage {
   readonly HOME_ASSETS = HOME_ASSETS;
   readonly menuOpen = signal(false);
-  readonly menuItems: INavMenuItem[] = [
-    { id: 'menu-1', label: 'Menu du jour', route: '/home' },
-    { id: 'menu-2', label: 'Service traiteur', route: '/home' },
-    { id: 'menu-3', label: 'Contacts', route: '/home' },
-    { id: 'menu-4', label: 'Se connecter', route: '/profile' },
-  ];
+  readonly menuItems = DEFAULT_NAV_MENU_ITEMS;
 
   paymentType: 'delivery' | 'online' = 'online';
   paymentMethod: 'wave' | 'orange' = 'wave';
