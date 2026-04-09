@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Cuisine de Maman</string>
+    <string name="title_activity_main">Cuisine de Maman</string>
+    <string name="package_name">com.cuisinedemaman.app</string>
+    <string name="custom_url_scheme">com.cuisinedemaman.app</string>
+</resources>
